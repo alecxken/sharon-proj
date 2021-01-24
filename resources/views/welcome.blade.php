@@ -73,7 +73,7 @@
                 <div class="u-container-layout u-valign-top u-container-layout-2">
                   <h4 class="u-custom-font u-font-oswald u-text u-text-2">{{$user->name}}</h4>
                   <h6 class="u-text u-text-3">Ksh{{number_format($user->price)}}</h6>
-                  <a href="{{url('#')}}" class="u-btn u-btn-round u-button-style u-hover-custom-color-3 u-palette-1-dark-1 u-radius-6 u-btn-1">Add to cart</a>
+                  <a href="{{url('buy-prod/'.$user->id)}}" class="u-btn u-btn-round u-button-style u-hover-custom-color-3 u-palette-1-dark-1 u-radius-6 u-btn-1">Get product</a>
                 </div>
               </div>
             </div>
