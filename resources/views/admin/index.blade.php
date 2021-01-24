@@ -9,8 +9,8 @@
 
   <div class="nav-tabs-custom">
             <ul class="nav nav-tabs pull-right">
-              <li class=""><a href="#tab_3-2" data-toggle="tab" aria-expanded="false">Roles</a></li>
-              <li class=""><a href="#tab_2-2" data-toggle="tab" aria-expanded="false">Permissions</a></li>
+              <li class=""><a href="#tab_2-2" data-toggle="tab" aria-expanded="false">Roles</a></li>
+              <li class=""><a href="#tab_3-2" data-toggle="tab" aria-expanded="false">Permissions</a></li>
               <li class="active"><a href="#tab_1-1" data-toggle="tab" aria-expanded="true">Users</a></li>
              
               <li class="pull-left header"><i class="fa fa-users"></i> User Administration <a href="{{ url('roles_index') }}" class="btn btn-default pull-right">Roles</a></li>

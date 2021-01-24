@@ -102,13 +102,14 @@ class ProductController extends Controller
 	    $interest = LoanSetting::all()->where('name',$request->input('loantype'))->first();
 
 	   
-	    $loans = (($interest->interest * $request->input('total')) + $request->input('total'));
+	    $loans = (($interest->interest/100 * $request->input('total')) + $request->input('total'));
+
 	    $loan = new UserLoan();
 		$loan->loan_date = \Carbon\Carbon::today();
 		$loan->product_id = $request->input('product_id');
 		$loan->user_id =Auth::id();
 		$loan->amount_paid = 0;
-		$loan->loan_amount = $loans;
+		$loan->loan_amount = $request->input('total');
 		$loan->amount_owed = $loans;
 		$loan->status = 'Active';
 		$loan->save();
