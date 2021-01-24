@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        
+        if ($user->hasRole('Admin', 'Manager')) {
+            return view('home');  
+        }
+        else
+        {
+          return redirect('my-loan');  
+        }
+        
     }
 }

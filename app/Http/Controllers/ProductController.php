@@ -7,6 +7,8 @@ use App\Models\Product;
 use App\Models\LoanSetting;
 use App\Models\UserLoan;
 use Auth;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 class ProductController extends Controller
 {
     //
