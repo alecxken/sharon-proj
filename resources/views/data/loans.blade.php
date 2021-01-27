@@ -12,14 +12,15 @@
 
            
             </div>
-            <div class="box-body table-responsive">
-                  <table id="example1" class="table table-bordered table-striped table-sm">
+            <div class="box-body table-responsive" id="table_wrapper">
+                  <table id="report-table" class="table table-bordered table-striped table-sm">
                <thead>
                  <tr class="box-success">  
                   <th>Customer</th>
                    <th>Product</th>
                     <th>Amount Owed</th>
                     <th>Amount Paid</th>
+                    <th>Status</th>
          
                  
                       
@@ -32,9 +33,11 @@
                       <tr>
                        
                          <td>{{$user->name}}</td>
-                         <td>{{$user->loan_id}}</td>
+                         <td>{{$user->product_id}}</td>
                          <td>{{$user->amount_owed}}</td>
                          <td>{{$user->amount_paid}}</td>
+                         <td>@if($user->status == 'Active') <span class="label label-danger">Active</span>
+                          @else<span class="label label-success">Closed</span> @endif</td>
                   
                     
                  
@@ -53,8 +56,25 @@
       </div>
    
     </section>
-     <script type="text/javascript">
-       
+   <script type="text/javascript">
+  
+     $(document).ready(function() {
+var table = $('#report-table').DataTable(
+    {
+    paging     : true,
+    lengthChange: true,
+    searching   : true,
+    ordering   : true,
+    info       : true,
+    autoWidth   : true,
+    buttons: [
+       'excel'
+    ]
+    });
 
-     </script>
+    table.buttons().container()
+        .appendTo( '#table_wrapper .col-sm-6:eq(0)' );
+
+} );
+</script>
 @endsection

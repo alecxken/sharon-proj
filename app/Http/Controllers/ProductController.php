@@ -76,10 +76,10 @@ class ProductController extends Controller
 		
 		$data = UserLoan::join('products', 'products.id', '=', 'user_loans.product_id')
 		->join('users', 'users.id', '=', 'user_loans.product_id')
-       ->select('user_loans.*','products.name')
+       ->select('user_loans.*','products.name','users.name')
        ->where('user_id',Auth::id())
        ->get();
-		
+		//return $data;
 		return view('data.loans',compact('data'));
 	}
 
