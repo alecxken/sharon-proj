@@ -131,4 +131,14 @@ class UserController extends Controller
         return back()->with('status','User successfully dropped.');
     }
 
+      #get a compnay
+  public function destroy($id)
+  {
+    $data = Role::findorfail($id);
+    $data->delete();
+    return back()->with('danger','deleted successfully');
+  
+  }
+
+
 }

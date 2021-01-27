@@ -83,7 +83,7 @@
                     <td>
                     <a href="{{ URL::to('roles/'.$role->id.'/edit') }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
 
-                    {!! Form::open(['method' => 'get', 'route' => ['roles.destroy', $role->id] ]) !!}
+                    {!! Form::open(['method' => 'get', 'url' => ['roles_destroy', $role->id] ]) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
 

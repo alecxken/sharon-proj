@@ -35,7 +35,7 @@ Route::get('/get-user/{id}', [UserController::class, 'get_user'])->name('roles.d
 
 Route::get('/user_destroy/{id}', [UserController::class, 'user_destroy'])->name('user.destroy');
 
-Route::post('/roles_destroy/{id}', [UserController::class, 'destroy'])->name('roles.destroy');
+Route::get('/roles_destroy/{id}', [UserController::class, 'destroy'])->name('roles.destroy');
 
 Route::get('/product-create', [ProductController::class, 'createproduct'])->name('product.create');
 
