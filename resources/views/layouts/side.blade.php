@@ -32,7 +32,7 @@
           <li class="header">HEADER</li>
           <!-- Optionally, you can add icons to the links -->
           <li  class="{{ (request()->is('home')) ? 'active' : '' }}"><a href="{{url('home')}}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-       
+        @role('Manager')
        <li class="treeview {{ (request()->is('product-create')) ? 'active' : '' }} {{ (request()->is('product-view')) ? 'active' : '' }} ">
             <a href="#"><i class="fa fa-cog"></i> <span> Product Sections</span>
               <span class="pull-right-container">
@@ -67,6 +67,7 @@
           
             </ul>
           </li>
+             @endrole
         @role('Admin')
           <li class="treeview {{ (request()->is('job')) ? 'active' : '' }}  {{ (request()->is('admin')) ? 'active' : '' }}">
             <a href="#"><i class="fa fa-cog"></i> <span> Setting Sections</span>
