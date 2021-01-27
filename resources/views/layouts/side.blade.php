@@ -31,7 +31,7 @@
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">HEADER</li>
           <!-- Optionally, you can add icons to the links -->
-          <li  class="{{ (request()->is('dashboard')) ? 'active' : '' }}"><a href="{{url('dashboard')}}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+          <li  class="{{ (request()->is('home')) ? 'active' : '' }}"><a href="{{url('home')}}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
        
        <li class="treeview {{ (request()->is('product-create')) ? 'active' : '' }} {{ (request()->is('product-view')) ? 'active' : '' }} ">
             <a href="#"><i class="fa fa-cog"></i> <span> Product Sections</span>
@@ -59,9 +59,9 @@
             <ul class="treeview-menu">
          
             <li>
-              <a href="{{url('soscompany-create')}}"><i class="fa fa-link"></i> <span>Loan Settings</span></a></li>
+              <a href="{{url('payments')}}" class="{{ (request()->is('loans')) ? 'active' : '' }}"><i class="fa fa-link"></i> <span>Payments Report</span></a></li>
 
-             <li class="{{ (request()->is('admin')) ? 'active' : '' }}"><a href="{{url('admin')}}" ><i class="fa fa-link"></i> <span>User Management</span></a></li>
+             <li class="{{ (request()->is('loans')) ? 'active' : '' }}"><a href="{{url('loans')}}" ><i class="fa fa-link"></i> <span>Loans Report</span></a></li>
    
            
           

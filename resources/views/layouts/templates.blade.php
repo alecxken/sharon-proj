@@ -13,7 +13,7 @@
    
   <link rel="stylesheet" href="{{asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
  <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
-    <script class="u-script" type="text/javascript" src="{{asset('jquery.js')}}" defer=""></script>
+   <!--  <script class="u-script" type="text/javascript" src="{{asset('jquery.js')}}" defer=""></script> -->
      @yield('extracss')
     <script class="u-script" type="text/javascript" src="{{asset('nicepage.js')}}" defer=""></script>
     <meta name="generator" content="Nicepage 3.3.7, nicepage.com">

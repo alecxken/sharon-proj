@@ -1,7 +1,14 @@
-@extends('layouts.master')
-
+@extends('layouts.templates')
+@section('extracss')
+    
+    <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    @endsection
 @section('content')
 
+@php
+
+@endphp
 <br>
      <section class="u-align-center u-clearfix u-section-2" id="sec-caa1">
 
@@ -12,7 +19,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3>{{$product}}</h3>
 
               <p>Active Loans</p>
             </div>
@@ -42,7 +49,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3>{{number_format($paid)}}</h3>
 
               <p>Amount Paid</p>
             </div>
@@ -57,7 +64,7 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
+              <h3>{{number_format($owed)}}</h3>
 
               <p>Amount Owed</p>
             </div>
@@ -94,7 +101,14 @@
                 <td class="u-border-1 u-border-white-50 u-table-cell">Ksh {{number_format($datas->loan_amount)}}</td>
                  <td class="u-border-1 u-border-white-50 u-table-cell">Ksh {{number_format($datas->amount_owed)}}</td>
                 <td class="u-border-1 u-border-white-50 u-table-cell">Ksh {{number_format($datas->amount_paid)}}</td>
-                <td><button class="btn btn-success">Pay Now</button></td>
+                <td>
+                  @if($datas->status == 'Active')
+                   <button class="btn btn-sm btn-success  open-modal" value="{{$datas->id}}">Pay Now</button>
+                  @else
+                  <b>Payment Done</b>
+                  @endif
+              
+                </td>
                
                 
               </tr>
@@ -107,5 +121,27 @@
       </div>
     </section>
     <br>
-    
+    @include('data.modalpay')
+       
+  <script type="text/javascript">      
+       $(document).ready(function(){
+          var url = "get-userloans";
+            //display modal form for task editing
+            $('.open-modal').click(function(){
+
+
+                var task_id = $(this).val();
+
+                $.get(url + '/' + task_id, function (data) {
+                    //success data
+                    console.log(data);
+                    $('#id').val(data.id);
+                     $('#amount_owed').val(data.amount_owed);
+                 
+                    $('#myModal').modal('show');
+                }) 
+            });
+          });
+   </script>
+
 @endsection

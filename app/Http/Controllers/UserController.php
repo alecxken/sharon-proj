@@ -92,6 +92,9 @@ class UserController extends Controller
         return back()->with('status','Permission'. $permission->name.' added!');
     }
 
+     
+
+
      public function user_update(Request $request)
     {
     	$id = $request->input('task_id');

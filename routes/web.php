@@ -58,8 +58,16 @@ Route::post('/loan-destroy/{id}', [ProductController::class, 'destroyloan'])->na
 
 Route::get('/deleteloan/{id}', [ProductController::class, 'deleteloan'])->name('loan.destroy');
 
+Route::get('/get-userloans/{id}', [ProductController::class, 'userloans'])->name('loan.get');
+
 Route::get('/loan-create', [ProductController::class, 'viewloan'])->name('loan.create');
 
 Route::get('/my-loan', [ProductController::class, 'myloan'])->name('loan.create');
+
+Route::get('/payments', [ProductController::class, 'payments'])->name('loan.create');
+
+Route::get('/loans', [ProductController::class, 'loans'])->name('loans.view');
+
+Route::post('/store-payment', [ProductController::class, 'storepayment'])->name('loan.pay');
 
 
