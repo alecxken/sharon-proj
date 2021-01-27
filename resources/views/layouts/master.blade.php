@@ -54,7 +54,7 @@
           </span>
         </button>
         <input class="u-search-input u-text-body-alt-color" type="search" name="search" value="" placeholder="Search">
-      </form><a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500">
+      </form><a href="{{URL('/')}}" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500">
         <img src="{{asset('images/logs.png')}}" class="u-logo-image u-logo-image-1" data-image-width="63">
       </a><nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
         <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
@@ -66,8 +66,8 @@
           </a>
         </div>
         <div class="u-custom-menu u-nav-container">
-          <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="Home.html" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="Shop.html" style="padding: 10px 20px;">Shop</a>
+          <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="{{URL('/')}}" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="{{URL('/home')}}" style="padding: 10px 20px;">Shop</a>
    
    @if (Route::has('login'))
    @auth
@@ -96,13 +96,12 @@
           <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
             <div class="u-sidenav-overflow">
               <div class="u-menu-close"></div>
-              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Shop.html" style="padding: 10px 20px;">Shop</a>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{url('/')}}" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{url('/')}}" style="padding: 10px 20px;">Shop</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" style="padding: 10px 20px;">Login</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" style="padding: 10px 20px;">Register</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" style="padding: 10px 20px;">My Profile</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Page-1.html">Page 1</a>
-</li></ul>
-</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" style="padding: 10px 20px;">My Profile</a>
+
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" style="padding: 10px 20px;">Logout</a>
 </li></ul>
             </div>
