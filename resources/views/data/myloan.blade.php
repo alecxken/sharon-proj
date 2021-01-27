@@ -89,6 +89,7 @@
                 <th class="u-border-1 u-border-black u-table-cell">Product </th>
                 <th class="u-border-1 u-border-black u-table-cell">Price </th>
                 <th class="u-border-1 u-border-black u-table-cell">Owed </th>
+                <th class="u-border-1 u-border-black u-table-cell">Monthly pay </th>
                 <th class="u-border-1 u-border-black u-table-cell">Paid </th>
                 <th class="u-border-1 u-border-black u-table-cell">Action </th>
               </tr>
@@ -100,6 +101,7 @@
                 <td class="u-border-1 u-border-grey-50 u-table-cell">{{$datas->name}}</td>
                 <td class="u-border-1 u-border-white-50 u-table-cell">Ksh {{number_format($datas->loan_amount)}}</td>
                  <td class="u-border-1 u-border-white-50 u-table-cell">Ksh {{number_format($datas->amount_owed)}}</td>
+                 <td class="u-border-1 u-border-white-50 u-table-cell">@if(!empty($datas->monthly_pay))Ksh {{number_format($datas->monthly_pay)}}@endif</td>
                 <td class="u-border-1 u-border-white-50 u-table-cell">Ksh {{number_format($datas->amount_paid)}}</td>
                 <td>
                   @if($datas->status == 'Active')

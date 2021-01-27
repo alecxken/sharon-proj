@@ -162,6 +162,7 @@ class ProductController extends Controller
 		$loan->user_id =Auth::id();
 		$loan->amount_paid = 0;
 		$loan->loan_amount = $request->input('total');
+		$loan->monthly_pay = $request->input('total')/$interest->period;
 		$loan->amount_owed = $loans;
 		$loan->status = 'Active';
 		$loan->save();

@@ -66,8 +66,8 @@
           </a>
         </div>
         <div class="u-custom-menu u-nav-container">
-          <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="Home.html" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="Shop.html" style="padding: 10px 20px;">Shop</a>
+          <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="/" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="/home" style="padding: 10px 20px;">Shop</a>
    
    @if (Route::has('login'))
    @auth

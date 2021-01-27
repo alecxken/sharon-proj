@@ -67,8 +67,9 @@
         </div>
         <div class="u-custom-menu u-nav-container">
           <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="{{URL('/')}}" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="{{URL('/home')}}" style="padding: 10px 20px;">Shop</a>
+</li><li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="{{URL('/home')}}" style="padding: 10px 20px;">Shop</a></li>
    
+ <li class="u-nav-item">  <a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="{{URL('/my-loan')}}" style="padding: 10px 20px;">My Profile</a></li>
    @if (Route::has('login'))
    @auth
 <li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="{{ url('/home') }}" style="padding: 10px 20px;"> {{ Auth::user()->name }}</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-border-4 u-border-active-custom-color-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-radius-6 u-text-active-palette-5-light-3 u-text-hover-custom-color-3 u-text-palette-5-light-3" href="{{ route('logout') }}"
