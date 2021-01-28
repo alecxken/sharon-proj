@@ -33,6 +33,21 @@
                             </div>
                         </div>
 
+                           <div class="form-group row">
+                            <label for="name" class=" col-form-label col-md-12">{{ __('Phone Number') }}</label>
+
+                            <div class="col-md-12">
+                                <input id="phone" type="number" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
                         <div class="form-group row">
                             <label for="email" class=" col-form-label col-md-12">{{ __('E-Mail Address') }}</label>
 

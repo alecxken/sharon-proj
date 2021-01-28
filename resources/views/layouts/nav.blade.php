@@ -17,18 +17,7 @@
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
-                {{--   <li><!-- start message -->
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Number of Mentees
-                        <small><i class="fa fa-clock-o"></i> {{\App\Mentor::all()->where('emp_id',$item->emp_id)->first()->count}} Mentees</small>
-                      </h4>
-                      <p> You Have  {{\App\Mentee::all()->where('emp_id',Auth::user()->id)->where('status','Accept')->count()}} Mentees Out of 3</p>
-                    </a>
-                  </li> --}}
+          
                   <!-- end message -->
 
 
@@ -72,7 +61,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="{{url('HR/profile')}}" class="btn btn-default btn-flat">Profile</a>
+                  <a href="{{url('profile')}}" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
 

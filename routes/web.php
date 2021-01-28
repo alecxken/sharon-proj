@@ -68,6 +68,12 @@ Route::get('/payments', [ProductController::class, 'payments'])->name('loan.crea
 
 Route::get('/loans', [ProductController::class, 'loans'])->name('loans.view');
 
+Route::get('/user-loans', [ProductController::class, 'usersloansdata'])->name('userloans.view');
+
+Route::get('/drop-loan/{id}', [ProductController::class, 'droploan'])->name('userloans.view');
+
+Route::get('/make-payments/{id}/{data}', [ProductController::class, 'paymentsaction'])->name('userloans.view');
+
 Route::post('/store-payment', [ProductController::class, 'storepayment'])->name('loan.pay');
 
-
+Route::post('/get-payment-report', [ProductController::class, 'indexdata'])->name('report.pay');

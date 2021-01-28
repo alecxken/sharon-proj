@@ -50,6 +50,11 @@
           
             </ul>
           </li>
+          <li>
+              <a href="{{url('user-loans')}}" class="{{ (request()->is('user-loans')) ? 'active' : '' }}"><i class="fa fa-link"></i> <span>Pending Loans </span> <span class="pull-right-container">
+              @php $co = \App\Models\UserLoan::all()->where('status','New')->count(); @endphp
+              <small class="label pull-right bg-blue">{{$co}}</small>
+            </span></a></li>
        <li class="treeview {{ (request()->is('reports')) ? 'active' : '' }} ">
             <a href="#"><i class="fa fa-cog"></i> <span> Report Sections</span>
               <span class="pull-right-container">

@@ -58,17 +58,100 @@ class ProductController extends Controller
 		return view('data.myloan',compact('product','data','owed','paid'));
 	}
 
+	public function usersloansdata()
+	{
+		
+		$data = UserLoan::join('products', 'products.id', '=', 'user_loans.product_id')
+      			 ->select('user_loans.*','products.name')->where('user_loans.status','New')->get();
+
+       $product =UserLoan::all()->where('user_id',Auth::id())->count();
+
+       $owed =UserLoan::all()->where('user_id',Auth::id())->sum('amount_owed');
+
+       $paid =UserLoan::all()->where('user_id',Auth::id())->sum('amount_paid');
+
+       $products =Product::all()->count();
+	
+		//return $data;
+		return view('data.paymentsview',compact('data'));
+	}
+
+	public function droploan($id)
+	{
+			$update =UserLoan::findorfail($id);
+		    $update->delete();
+			return back()->with('danger','successfully deleted');
+	}
+
+	public function paymentsaction($id,$data)
+	{
+		if ($id == 'Approve') {
+			$update =UserLoan::findorfail($data);
+			$update->status = 'Active';
+			$update->save();
+			return back()->with('status','successfully updated');
+		}
+		elseif ($id == 'Reject') {
+				$update =UserLoan::findorfail($data);
+			$update->status = 'Rejected';
+			$update->save();
+			return back()->with('status','successfully updated');
+		}
+
+	}
+
+	
+
 
 	    #Create a compnay
 	public function payments()
 	{
 		
 		$data = UserPayment::all();
+		$data = UserPayment::join('users', 'users.id', '=', 'user_payments.user_id')
+       ->select('user_payments.*','users.name')
+       ->where('user_id',Auth::id())
+       ->get();
 
 	
 		
 		return view('data.payments',compact('data'));
 	}
+
+
+	public function indexdata(Request $request)
+    {
+		$client = $request->input('client');
+
+		$date = $request->input('date');
+
+		$amount = $request->input('amount');
+
+		$data = UserPayment::query();
+
+		if (!empty($client))
+		 {
+	       $data = $data->where('user_id',$client);
+	     }
+
+	   if (!empty($date)) 
+	     {
+	       $data = $data->where('user_payments.created_at', $date);
+	     }
+
+	    
+
+	if (!empty($amount)) 
+	{
+	    $data = $data->where('amount_paid', 'like', '%'.$amount.'%');
+	}
+
+		$data = $data->join('users', 'users.id', '=', 'user_payments.user_id')
+       ->select('user_payments.user_id','user_payments.loan_id','user_payments.created_at','user_payments.amount_paid','users.name')->get();  
+
+      //  $data = DataEntry::OrderBy('id', 'desc')->get();
+        return view('data.payments',compact('data'));
+    }
 
 		public function loans()
 	{
@@ -165,7 +248,7 @@ class ProductController extends Controller
 		$loan->loan_amount = $request->input('total');
 		$loan->monthly_pay = $loans/$interest->period;
 		$loan->amount_owed = $loans;
-		$loan->status = 'Active';
+		$loan->status = 'New';
 		$loan->save();
 
 		return redirect('my-loan')->with('status','successfully Submitted');

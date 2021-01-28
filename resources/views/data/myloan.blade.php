@@ -91,6 +91,7 @@
                 <th class="u-border-1 u-border-black u-table-cell">Owed </th>
                 <th class="u-border-1 u-border-black u-table-cell">Monthly pay </th>
                 <th class="u-border-1 u-border-black u-table-cell">Paid </th>
+                   <th class="u-border-1 u-border-black u-table-cell">Status </th>
                 <th class="u-border-1 u-border-black u-table-cell">Action </th>
               </tr>
             </thead>
@@ -103,9 +104,19 @@
                  <td class="u-border-1 u-border-white-50 u-table-cell">Ksh {{number_format($datas->amount_owed)}}</td>
                  <td class="u-border-1 u-border-white-50 u-table-cell">@if(!empty($datas->monthly_pay))Ksh {{number_format($datas->monthly_pay)}}@endif</td>
                 <td class="u-border-1 u-border-white-50 u-table-cell">Ksh {{number_format($datas->amount_paid)}}</td>
+                <td class="u-border-1 u-border-white-50 u-table-cell"><span class="btn btn-xs btn-info" >{{$datas->status}}</span></td>
                 <td>
                   @if($datas->status == 'Active')
                    <button class="btn btn-sm btn-success  open-modal" value="{{$datas->id}}">Pay Now</button>
+                   @elseif($datas->status == 'Reject')
+                   Rejected
+                   @elseif($datas->status == 'New')
+                   <div class="btn-group">
+                     <span class="btn btn-xs btn-info"> Waiting Approval </span>
+                     <a  class="btn btn-xs btn-danger" href="{{url('drop-loan/'.$datas->id)}}">Drop</a>
+                   </div>
+                  
+                   
                   @else
                   <b>Payment Done</b>
                   @endif
